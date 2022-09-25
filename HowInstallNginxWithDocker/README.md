@@ -27,4 +27,21 @@
 
  Una vez se hayan comprendido los temas anteriormente mencionados e [instalado Docker en Ubuntu (Linux)](https://github.com/KevinChevez/Tutoriales_Ayudantia/tree/main/HowInstallDocker), entonces procedemos con el tutorial el cual puede también ser seguido y revisado en su página oficial mediante el siguiente [enlace🔗](https://hub.docker.com/_/nginx).
 
-1. 
+ 1. Descargar la imagen de NGINX usando Docker mediante la ejecución del siguiente comando:
+ ```
+ $ sudo docker pull nginx
+ ```
+ 
+ 2. Una vez descargada la imagen ejecutamos el siguiente comando por consola:
+ ```
+ $ sudo docker run -d --name mi_nginx_service -p 80:80 nginx
+ ```
+ Siendo el formato de este comando el siguiente: docker run -d(bandera que indica el procesamiento en el background) --name <nombre>(especifica el nombre de tu contenedor a crear) -p <puerto_pc:puerto_container>(Indica el puerto de la computadora y el puerto del contenedor) <Imagen a usar>(En este caso se usó la imagen nginx anteriormente instalada para crear el contenedor satisfactoriamente.)
+ 
+ 3. Comprobamos la creación del contenedor usando el siguiente comando:
+ ```
+ $ sudo docker ps
+ ```
+ 
+ 4. Finalmente si todo salió correctamente comprobamos la existencia del servicio de Nginx en el navegador dentro de nuestro localhost
+ 

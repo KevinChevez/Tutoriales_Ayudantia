@@ -25,6 +25,6 @@
  
 ## 2. Tutorial
 
- Una vez se hayan comprendido los temas anteriormente mencionados e instalado Docker en Ubuntu (Linux), entonces procedemos con el tutorial el cual puede también ser seguido y revisado en su página oficial mediante el siguiente [enlace🔗](https://hub.docker.com/_/nginx).
+ Una vez se hayan comprendido los temas anteriormente mencionados e [instalado Docker en Ubuntu (Linux)](https://github.com/KevinChevez/Tutoriales_Ayudantia/tree/main/HowInstallDocker), entonces procedemos con el tutorial el cual puede también ser seguido y revisado en su página oficial mediante el siguiente [enlace🔗](https://hub.docker.com/_/nginx).
 
 1. 

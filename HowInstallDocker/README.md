@@ -16,9 +16,48 @@
  
  [![Video referencial](https://img.youtube.com/vi/kkfZs0vJFyU/0.jpg)](https://www.youtube.com/watch?v=kkfZs0vJFyU)
 
- ## 2. Tutorial
+## 2. Tutorial
 
- 1. Actualizar Ubuntu mediante la terminal usando el siguiente comando:
+ 1. Actualizar apt de Ubuntu mediante la terminal usando el siguiente comando:
  ```
- sudo apt update -y % sudo apt upgrade -y
+ $ sudo apt-get update -y & sudo apt-get upgrade -y
  ```
+
+ 2. Instalar paquetes necesarios para permitir que apt haga uso de paquetes a través de HTTPS:
+ ```
+ $ sudo apt-get install \
+    ca-certificates \
+    curl \
+    gnupg \
+    lsb-release
+ ```
+
+ 3. Añadir la clave GPG del repositorio oficial de Docker, en su sistema mediante el siguiente comando:
+ ```
+ $ sudo mkdir -p /etc/apt/keyrings
+ $ curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo gpg --dearmor -o /etc/apt/keyrings/docker.gpg
+ ```
+
+ 4. Configurar el repositorio usando el siguiente comando:
+ ```
+ $ echo \
+   "deb [arch=$(dpkg --print-architecture) signed-by=/etc/apt/keyrings/docker.gpg] https://download.docker.com/linux/ubuntu \
+   $(lsb_release -cs) stable" | sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
+ ```
+
+ 5. Instalar el Docker Engine usando los siguiente comando para actualizar el paquete index e instalar la versión más reciente de Docker Engine:
+ ```
+ $ sudo apt-get update
+ $ sudo apt-get install docker-ce docker-ce-cli containerd.io docker-compose-plugin
+ ```
+
+ 6. Por último verifica que se haya instalado correctamente Docker en tu máquina haciendo uso de los siguientes comandos:
+ ```
+ $ sudo service docker start
+ $ sudo docker run hello-world
+ ```
+ Si todo salió bien, entonces deberá salir en consola el mensaje Hola mundo que se escribió junto a otra información, esto sucederá debido a que se crea una imagen de test para imprimir el mensaje por consolar y luego se cierra.
+ 
+## 3. Referencias
+* Docker. (s.f.). Install Docker Engine on Ubuntu. Recuperado el 25 de September de 2022, de Docker Docs: https://docs.docker.com/engine/install/ubuntu/
+* Coleman, D. (27 de Abril de 2022). Server space. Recuperado el 25 de Septiembre de 2022, de Qué es Docker?: https://serverspace.io/es/support/help/what-is-docker/

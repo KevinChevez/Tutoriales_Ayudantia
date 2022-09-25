@@ -31,23 +31,23 @@
  ```
  $ sudo docker pull nginx
  ```
- ![Imagen del paso 1]('./images/Paso1_NginxDocker.png')
+ ![Imagen del paso 1](./images/Paso1_NginxDocker.png)
 
  2. Una vez descargada la imagen ejecutamos el siguiente comando por consola:
  ```
  $ sudo docker run -d --name mi_nginx_service -p 80:80 nginx
  ```
- ![Imagen del paso 2]('./images/Paso2_NginxDocker.png')
+ ![Imagen del paso 2](./images/Paso2_NginxDocker.png)
  Siendo el formato de este comando el siguiente: docker run -d(bandera que indica el procesamiento en el background) --name <nombre>(especifica el nombre de tu contenedor a crear) -p <puerto_pc:puerto_container>(Indica el puerto de la computadora y el puerto del contenedor) <Imagen a usar>(En este caso se usó la imagen nginx anteriormente instalada para crear el contenedor satisfactoriamente.)
  
  3. Comprobamos la creación del contenedor usando el siguiente comando:
  ```
  $ sudo docker ps
  ```
- ![Imagen del paso 3]('./images/Paso3_NginxDocker.png')
+ ![Imagen del paso 3](./images/Paso3_NginxDocker.png)
  
  4. Finalmente si todo salió correctamente comprobamos la existencia del servicio de Nginx en el navegador dentro de nuestro localhost
- ![Imagen del paso 4]('./images/Paso4_NginxDocker.png')
+ ![Imagen del paso 4](./images/Paso4_NginxDocker.png)
 
 ## 3. Referencias
  * Coleman, D. (27 de Abril de 2022). Server space. Recuperado el 25 de Septiembre de 2022, de Qué es Docker?: https://serverspace.io/es/support/help/what-is-docker/
